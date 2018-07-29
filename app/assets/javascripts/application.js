@@ -11,8 +11,10 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery/jquery-3.1.1.min.js
+//= require jquery-ui/jquery-ui.min.js 
 //= require bootstrap-sprockets
 //= require metisMenu/jquery.metisMenu.js
 //= require pace/pace.min.js
 //= require slimscroll/jquery.slimscroll.min.js
-//= require_tree .
+//= require inspinia.js
+//= require jquery-ujs/src/rails.js
