@@ -8,6 +8,9 @@ gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-rails', '4.7.0.1'
 gem 'tzinfo-data'
 
+# Use devise Gem for Users
+gem 'devise'
+
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 

@@ -1,0 +1,31 @@
+<br>
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="ibox-content">
+        <h3 class="ibox-title"> Role # <%= @role.id %></h3>
+      <div class="ibox-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl>
+
+              <dt> Role Name</dt>
+              <dd><%= @role.name %></dd>  
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <a href="/roles/<%= @role.id %>" class="btn btn-primary">
+                <i class="fa fa-reply"></i>
+              </a>
+
+              <a href="/roles/<%= @role.id %>/edit" class="btn btn-warning">
+                <i class="fa fa-edit"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

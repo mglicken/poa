@@ -1,4 +1,5 @@
 Myapp::Application.routes.draw do
+  devise_for :users
   get "home/index"
   get "home/minor"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -6,6 +7,23 @@ Myapp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
 root to: 'home#index'
+
+  # Routes for the Roles resource:
+  # CREATE
+  get "/roles/new", :controller => "roles", :action => "new"
+  post "/create_role", :controller => "roles", :action => "create"
+
+  # READ
+  get "/roles", :controller => "roles", :action => "index"
+  get "/roles/:id", :controller => "roles", :action => "show"
+
+  # UPDATE
+  get "/roles/:id/edit", :controller => "roles", :action => "edit"
+  post "/update_role/:id", :controller => "roles", :action => "update"
+
+  # DELETE
+  get "/delete_role/:id", :controller => "roles", :action => "destroy"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
