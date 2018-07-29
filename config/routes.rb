@@ -8,6 +8,23 @@ Myapp::Application.routes.draw do
   # You can have the root of your site routed with "root"
 root to: 'home#index'
 
+  # Routes for the Customers resource:
+  # CREATE
+  get "/customers/new", :controller => "customers", :action => "new"
+  post "/create_customer", :controller => "customers", :action => "create"
+
+  # READ
+  get "/customers", :controller => "customers", :action => "index"
+  get "/customers/:id", :controller => "customers", :action => "show"
+
+  # UPDATE
+  get "/customers/:id/edit", :controller => "customers", :action => "edit"
+  post "/update_customer/:id", :controller => "customers", :action => "update"
+
+  # DELETE
+  get "/delete_customer/:id", :controller => "customers", :action => "destroy"
+
+
   # Routes for the Roles resource:
   # CREATE
   get "/roles/new", :controller => "roles", :action => "new"

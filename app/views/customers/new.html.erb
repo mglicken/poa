@@ -1,0 +1,110 @@
+<!-- Validation failure messages -->
+
+<% if @customer.errors.any? %>
+  <% @customer.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Customer</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/create_customer" method="post" class="form-horizontal">
+          <!-- Hidden input for authenticity token to protect from forgery -->
+          <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+          <!-- Label and input for Property Name -->
+          <div class="form-group">
+            <label for="property_name" class="col-lg-2 control-label">
+              Property Name
+            </label>
+            <div class="col-lg-10">
+              <input type="string" id="property_name" name="property_name" placeholder="e.g., Walgreen's Chicago" class="form-control" value="<%= @customer.property_name %>">
+            </div>
+          </div>
+
+          <!-- Label and input for Occupancy ID -->
+          <div class="form-group">
+            <label for="occupancy_id" class="col-lg-2 control-label">
+              Occupancy ID
+            </label>
+            <div class="col-lg-10">
+              <input type="integer" id="occupancy_id" name="occupancy_id" placeholder="e.g., Walgreen's Chicago" class="form-control" value="<%= @customer.occupancy_id %>">
+            </div>
+          </div>
+
+          <!-- Label and input for Address 1 -->
+          <div class="form-group">
+            <label for="address_1" class="col-lg-2 control-label">
+              Address 1
+            </label>
+            <div class="col-lg-10">
+              <input type="string" id="address_1" name="address_1" placeholder="e.g., Walgreen's Chicago" class="form-control" value="<%= @customer.address_1 %>">
+            </div>
+          </div>
+
+          <!-- Label and input for Address 2 -->
+          <div class="form-group">
+            <label for="address_2" class="col-lg-2 control-label">
+              Address 2
+            </label>
+            <div class="col-lg-10">
+              <input type="string" id="address_2" name="address_2" placeholder="e.g., Walgreen's Chicago" class="form-control" value="<%= @customer.address_2 %>">
+            </div>
+          </div>
+
+          <!-- Label and input for City -->
+          <div class="form-group">
+            <label for="city" class="col-lg-2 control-label">
+              City
+            </label>
+            <div class="col-lg-10">
+              <input type="string" id="city" name="city" placeholder="e.g., Walgreen's Chicago" class="form-control" value="<%= @customer.city %>">
+            </div>
+          </div>
+
+          <!-- Label and input for State -->
+          <div class="form-group">
+            <label for="state" class="col-lg-2 control-label">
+              State
+            </label>
+            <div class="col-lg-10">
+              <input type="string" id="state" name="state" placeholder="e.g., Walgreen's Chicago" class="form-control" value="<%= @customer.state %>">
+            </div>
+          </div>
+
+          <!-- Label and input for Zip Code -->
+          <div class="form-group">
+            <label for="zip" class="col-lg-2 control-label">
+              Zip Code
+            </label>
+            <div class="col-lg-10">
+              <input type="integer" id="zip" name="zip" placeholder="e.g., Walgreen's Chicago" class="form-control" value="<%= @customer.zip %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button class="btn btn-success">
+                Create Customer
+              </button>
+              or
+              <a href="/customers">Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

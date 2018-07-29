@@ -1,8 +1,5 @@
 class Role < ActiveRecord::Base
 	validates :name, :presence => true, :uniqueness => true
-	has_many :people
-	has_many :work_histories
-	has_many :sponsor_histories
 
 	def self.to_csv
 		CSV.generate do |csv|
